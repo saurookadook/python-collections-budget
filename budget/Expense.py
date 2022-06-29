@@ -10,6 +10,8 @@ class Expense():
 
 
 class Expenses():
+    """Contains a list of Expense objects and a sum of the amounts."""
+
     def __init__(self):
         self.list = []
         self.sum = 0
@@ -30,13 +32,13 @@ class Expenses():
             food_expenses = set()
             unnecessary_expenses = set()
             for i in self.list:
-                if (i.category == 'Phone'    or i.category == 'Auto and Gas' or 
-                    i.category == 'Classes'  or i.category == 'Utilities' or 
-                    i.category == 'Mortgage'): 
+                if (i.category == 'Phone'    or i.category == 'Auto and Gas' or
+                    i.category == 'Classes'  or i.category == 'Utilities' or
+                    i.category == 'Mortgage'):
                     necessary_expenses.add(i)
                 elif(i.category == 'Groceries' or i.category == 'Eating Out'):
                     food_expenses.add(i)
                 else:
                     unnecessary_expenses.add(i)
-            
+
             return [necessary_expenses, food_expenses, unnecessary_expenses]
