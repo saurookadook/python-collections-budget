@@ -1,5 +1,6 @@
 import collections
-import matplotlib.plt as plt
+import matplotlib as mpltlib
+from matplotlib import pyplot as plt
 
 from pprint import pprint as pp
 from . import Expense
