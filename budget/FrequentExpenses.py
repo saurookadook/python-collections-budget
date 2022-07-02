@@ -1,5 +1,5 @@
 import collections
-import matplotlib as mpltlib
+
 from matplotlib import pyplot as plt
 
 from pprint import pprint as pp
