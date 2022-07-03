@@ -26,7 +26,7 @@ def test_task2_module5():
     expected_timeit_str_2 = 'timeit:timeit:stmt:expenses.categorize_for_loop():setup:\n from . import Expense\nexpenses = Expense.Expenses()\nexpenses.read_expenses(\'data/spending_data.csv\')\n:number:100000:globals:globals'
 
     for x in calls:
-        if (expected_timeit_str in x.replace(" ", "") or 
+        if (expected_timeit_str in x.replace(" ", "") or
             expected_timeit_str_2.replace(" ", "") in x.replace(" ", "")):
             found_timeit_call = True
 
@@ -90,9 +90,9 @@ def test_task6_module5():
              if (isinstance(x, ast.FunctionDef) and
                     x.name == 'main'):
                 for y in x.body:
-                    if (isinstance(y, ast.Assign) and 
+                    if (isinstance(y, ast.Assign) and
                         isinstance(y.targets[0], ast.Tuple)):
-                        if (y.targets[0].elts[0].id == 'fig' and 
+                        if (y.targets[0].elts[0].id == 'fig' and
                         y.targets[0].elts[1].id == 'ax'):
                             fig_ax_tuple_found = True
 
@@ -103,7 +103,7 @@ def test_task6_module5():
     except Exception as e:
             # print('for print e = ' + str(e))
             pass
-    
+
     assert fig_ax_tuple_found and plt_subplots_call_found, 'Did you assign a Tuple `fig,ax` to a call to `plt.subplots()`?'
 
 
@@ -119,7 +119,7 @@ def test_task7_module5():
              if (isinstance(x, ast.FunctionDef) and
                     x.name == 'main'):
                 for y in x.body:
-                    if (isinstance(y, ast.Assign) and 
+                    if (isinstance(y, ast.Assign) and
                         isinstance(y.targets[0], ast.Name) and
                         y.targets[0].id == 'labels'):
                         assign_labels_found = True
@@ -168,7 +168,7 @@ def test_task10_module5():
             if (isinstance(x, ast.FunctionDef) and
                     x.name == 'main'):
                 for y in x.body:
-                    if (isinstance(y, ast.Expr) and 
+                    if (isinstance(y, ast.Expr) and
                         isinstance(y.value, ast.Call)):
                         if (hasattr(y.value.func, 'value') and
                             y.value.func.value.id == 'ax' and
@@ -197,7 +197,7 @@ def test_task11_module5():
             if (isinstance(x, ast.FunctionDef) and
                     x.name == 'main'):
                 for y in x.body:
-                    if (isinstance(y, ast.Expr) and 
+                    if (isinstance(y, ast.Expr) and
                             isinstance(y.value, ast.Call)):
                         if(hasattr(y.value.func, 'value') and
                                 y.value.func.value.id == 'plt' and
